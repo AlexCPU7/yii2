@@ -7,7 +7,6 @@ use Yii;
 use yii\base\Behavior;
 use \voskobovich\behaviors\ManyToManyBehavior;
 use yii\helpers\ArrayHelper;
-use app\models\IdBookAuthor;
 use mongosoft\file\UploadBehavior;
 
 

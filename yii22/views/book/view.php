@@ -17,34 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1> <?= Html::encode($this->title) ?> </h1>
 
-    <p>
-        <?= Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Вы уверены, что хотите удалить?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-
-    <? /*=DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-
-            //'idBook.title',
-            //'title',
-            //'description',
-            'pic:image',
-        ],
-    ])*/
-    ?>
     <?php
-    /*var_dump($model);
-    foreach ($model as $model){
-        echo $model->title;
-    }*/
 
     echo "<div class='fon'><img src=" . $model->pic . "> </div>";
 
@@ -87,26 +60,5 @@ $this->params['breadcrumbs'][] = $this->title;
             $numGenre++;
         }
     }echo "</div>";
-
-
-
     ?>
-    <?//= Html::img($model->pic) ?>
-
-    <br>
-    <table border=2>
-        <?php /*foreach ($basebook as $book) { ?>
-            <tr>
-                <td><?=$book['id']?></td>
-                <td><?=$book['title']?></td>
-                <td><?=$book['description']?></td>
-                <td><?=$book['idAuthor']['title']?></td>
-
-            </tr>
-        <?php } */?>
-    </table>
-    <br>
-
-
-
 </div>

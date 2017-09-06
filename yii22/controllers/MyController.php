@@ -2,12 +2,16 @@
 
 namespace  app\controllers;
 
+use Yii;
 use app\models\Author;
 use app\models\Book;
+use app\models\IdBookAuthor;
+use app\models\IdBookGenre;
+use app\models\BookSearch;
 use app\models\Genre;
 use yii\web\Controller;
 use app\models\TableForm;
-use app\models\IdBookAuthor;
+
 
 class MyController extends Controller {
 
@@ -37,8 +41,8 @@ class MyController extends Controller {
     }
 
     public function actionBook(){
-
-        $book = Book::find()->all();
+        $book = Book::find()->joinWith('authors')->joinWith('genres')->all();
+        //$book = Book::find()->where(['like', 'title', ''])->joinWith('authors')->joinWith('genres')->all();
 
         return $this->render('book', compact('book'));
     }

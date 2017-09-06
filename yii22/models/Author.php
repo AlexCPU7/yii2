@@ -56,26 +56,6 @@ class Author extends \yii\db\ActiveRecord
             ->viaTable('id_book_author',['id_author' => 'id']);
     }
 
-//    public function getGenres()
-//    {
-//        return $this->hasMany(Genre::className(), ['id' => 'id_genre'])
-//            ->viaTable('id_book_genre',['id_book' => 'id'])
-//            ->viaTable('book',['id' => 'id_book'])
-//            ->viaTable('id_book_author',['id_author' => 'id']);
-//    }
-
-    /*public function getCustomField()
-    {
-        return 'custom value';
-    }*/
-
-    /*public function getGenres()
-    {
-        //return Genre::findAll(['title']);
-        return Genre::find()->all();
-
-    }*/
-
     public static function listAll($keyField = 'id', $valueField = 'title', $asArray = true)
     {
         $query = static::find();
@@ -92,4 +72,9 @@ class Author extends \yii\db\ActiveRecord
 
         return parent::delete();
     }
+
+    public static function getToList() {
+        return ArrayHelper::map(self::find()->all(), 'title', 'title');
+    }
+
 }

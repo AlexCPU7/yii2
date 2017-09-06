@@ -76,4 +76,8 @@ class Genre extends \yii\db\ActiveRecord
 
         return parent::delete();
     }
+
+    public static function getToList(){
+        return ArrayHelper::map(self::find()->all(), 'title', 'title');
+    }
 }

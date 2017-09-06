@@ -37,9 +37,12 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Книги', 'url' => ['/book']],
-            ['label' => 'Авторы', 'url' => ['/author']],
-            ['label' => 'Жанры', 'url' => ['/genre']],
+            ['label' => 'Каталог', 'url' => ['/book']],
+            ['label' => 'Книги(Адм)', 'url' => ['/admin/book']],
+            ['label' => 'Авторы(Адм)', 'url' => ['/admin/author']],
+            ['label' => 'Жанры(Адм)', 'url' => ['/admin/genre']],
+            ['label' => 'Логин', 'url' => ['/admin']],
+            //['label' => 'Логин', 'url' => ['/site/login']],
             /*Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
